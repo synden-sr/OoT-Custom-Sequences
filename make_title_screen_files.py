@@ -73,7 +73,7 @@ def main():
                     continue
 
             sequence_slot = "Fairy Fountain"
-            if seq_type == "fanfare":
+            if seq_type.lower() == "fanfare":
                 sequence_slot = "Zelda's Lullaby"
 
             cosmetic_plando = {
@@ -82,7 +82,7 @@ def main():
                 },
             }
             with open(f'{cosmetic_plando_filename}', 'w', encoding='utf-8', newline='') as file:
-                json.dump(cosmetic_plando, file, indent=4)
+                json.dump(cosmetic_plando, file, indent=4, ensure_ascii = False)
 
             rando_settings = {
                 "enable_cosmetic_file": True,
